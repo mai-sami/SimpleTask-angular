@@ -1,0 +1,17 @@
+<div class="task"
+(dblclick)="onToggle(task)"
+
+  [ngClass]="{ reminder: task.reminder,reminders:task.reminder==false }"
+>
+  <h4 >{{task.text}}
+
+<app-button
+ Class="btn btn-danger"
+ weight="55px"
+ size="14px"
+ (click)="onDelete(task)"
+ text="remove"></app-button>
+  </h4>
+    <p>{{ task.day }}</p>
+  </div>
+

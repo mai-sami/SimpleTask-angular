@@ -1,0 +1,97 @@
+<p>form-group works!</p>
+
+<form
+  [formGroup]="registerationForm"
+  class="form-control"
+  (onSubmit)="initializeFormGroup()"
+>
+  <section formGroupName="name">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="First Name"
+      name="first"
+      formControlName="first"
+    />
+    <!-- <div *ngIf="f['first'].errors?.['required']">please fill input</div> -->
+
+    <div class="errors">
+      <div *ngIf="registerationForm.invalid">please fill input</div>
+    </div>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Maddle Name"
+      name="maddile"
+      formControlName="maddile"
+    />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Last Name"
+      name="last"
+      formControlName="last"
+    />
+  </section>
+  <input
+    placeholder="Email"
+    class="form-control"
+    name="email"
+    formControlName="email"
+  />
+  <input
+    placeholder="phone"
+    class="form-control"
+    name="phone"
+    formControlName="phone"
+  />
+  <section formGroupName="address">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Country"
+      name="country"
+      formControlName="country"
+    />
+    <input
+      type="text"
+      class="form-control"
+      placeholder="City"
+      name="city"
+      formControlName="city"
+    />
+  </section>
+  <button (click)="addSkills()">Add 1</button>
+  <section formArrayName="skills">
+    <div
+      *ngFor="let skill of getSkills.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <h1>#{{ i + 1 }}</h1>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="name"
+        name="name"
+        formControlName="name"
+      />
+      <input
+        type="text"
+        class="form-control"
+        placeholder="level"
+        name="level"
+        formControlName="level"
+      />
+    </div>
+  </section>
+  <!-- <section formArrayName="refrence">
+    <div *ngFor="let ref of registerationForm.get('refrence').controls;let i=index" [formGroupName]="i" >
+       <input type="text" class="form-control"  formControlName="{{i}}"  />
+
+    </div>
+   </section> -->
+  <button (click)="printValuSkiils()">divghsg</button>
+  <button (click)="onFormSubmitted()" class="form-control btn btn-primary p-2">
+    Login
+  </button>
+</form>

@@ -1,0 +1,27 @@
+.task {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.task.reminder {
+  border-left: 6px solid green;
+ }
+ .reminders {
+  border-left: 6px solid red;
+  }
+ h4 {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-danger
+{
+  font-size: 12px !important;
+}
+p{
+  font-size: 12px !important;
+
+}
